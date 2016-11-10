@@ -1,16 +1,17 @@
-//모터A 컨트롤
-int IN1=7;
-int IN2=6;
+//M1모터 컨트롤(LEFT)
+//A = 정회전   B= 역회전
+int M1A1 = 4;//M1모터 정회전
+int M1B1 = 5;//M1모터 역회전
  
-//모터B 컨트롤
-int IN3=5;
-int IN4=4;
+//M2모터 컨트롤(RIGHT)
+int M2A2 = 6;//M2모터 정회전
+int M2B2 = 7;//M2모터 역회전
  
 void setup() {
-  pinMode(IN1,OUTPUT);
-  pinMode(IN2,OUTPUT);
-  pinMode(IN3,OUTPUT);
-  pinMode(IN4,OUTPUT);
+  pinMode(M1A1,OUTPUT);
+  pinMode(M1B1,OUTPUT);
+  pinMode(M2A2,OUTPUT);
+  pinMode(M2B2,OUTPUT);
 }
  
 void loop() {
@@ -35,71 +36,71 @@ void loop() {
 //모터A,B 정회전
 void bothMotorStart()
 {
-    digitalWrite(IN1,HIGH);
-    digitalWrite(IN2,LOW);
-    digitalWrite(IN3,HIGH);
-    digitalWrite(IN4,LOW);
+    digitalWrite(M1A1,HIGH);
+    digitalWrite(M1B1,LOW);
+    digitalWrite(M2A2,HIGH);
+    digitalWrite(M2B2,LOW);
 }
  
 //모터A,B Stop
 void stopAllMotor()
 {
-    digitalWrite(IN1,LOW);
-    digitalWrite(IN2,LOW);
-    digitalWrite(IN3,LOW);
-    digitalWrite(IN4,LOW);
+    digitalWrite(M1A1,LOW);
+    digitalWrite(M1B1,LOW);
+    digitalWrite(M2A2,LOW);
+    digitalWrite(M2B2,LOW);
 }
  
 //모터A 역회전, 모터B 정회전
 void turnLeft()
 {
-    digitalWrite(IN1,LOW);
-    digitalWrite(IN2,HIGH);
-    digitalWrite(IN3,HIGH);
-    digitalWrite(IN4,LOW);
+    digitalWrite(M1A1,LOW);
+    digitalWrite(M1B1,HIGH);
+    digitalWrite(M2A2,HIGH);
+    digitalWrite(M2B2,LOW);
 }
  
 //모터A 정회전, 모터B 역회전
 void turnRight()
 {
-    digitalWrite(IN1,HIGH);
-    digitalWrite(IN2,LOW);
-    digitalWrite(IN3,LOW);
-    digitalWrite(IN4,HIGH);
+    digitalWrite(M1A1,HIGH);
+    digitalWrite(M1B1,LOW);
+    digitalWrite(M2A2,LOW);
+    digitalWrite(M2B2,HIGH);
 }
  
 //모터A 정회전, 모터B Stop
 void motorA_Rotation()
 {
-    digitalWrite(IN1,HIGH);
-    digitalWrite(IN2,LOW);
-    digitalWrite(IN3,LOW);
-    digitalWrite(IN4,LOW);
+    digitalWrite(M1A1,HIGH);
+    digitalWrite(M1B1,LOW);
+    digitalWrite(M2A2,LOW);
+    digitalWrite(M2B2,LOW);
 }
  
 //모터A Stop, 모터B 정회전
 void motorB_Rotation()
 {
-    digitalWrite(IN1,LOW);
-    digitalWrite(IN2,LOW);
-    digitalWrite(IN3,HIGH);
-    digitalWrite(IN4,LOW);
+    digitalWrite(M1A1,LOW);
+    digitalWrite(M1B1,LOW);
+    digitalWrite(M2A2,HIGH);
+    digitalWrite(M2B2,LOW);
 }
  
 //모터A 역회전, 모터B Stop
 void motorA_Reverse()
 {
-    digitalWrite(IN1,LOW);
-    digitalWrite(IN2,HIGH);
-    digitalWrite(IN3,LOW);
-    digitalWrite(IN4,LOW);
+    digitalWrite(M1A1,LOW);
+    digitalWrite(M1B1,HIGH);
+    digitalWrite(M2A2,LOW);
+    digitalWrite(M2B2,LOW);
 }
  
 //모터A Stop, 모터B 역회전
 void motorB_Reverse()
 {
-    digitalWrite(IN1,LOW);
-    digitalWrite(IN2,LOW);
-    digitalWrite(IN3,LOW);
-    digitalWrite(IN4,HIGH);
+    digitalWrite(M1A1,LOW);
+    digitalWrite(M1B1,LOW);
+    digitalWrite(M2A2,LOW);
+    digitalWrite(M2B2,HIGH);
 }
